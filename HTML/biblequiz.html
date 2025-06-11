@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Missing Word Bible Game</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #4af0e8;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    #verse {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      font-size: 20px;
+      padding: 8px 12px;
+      margin: 10px 5px;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    #hint {
+      margin-top: 10px;
+      font-style: italic;
+      color: #444;
+      font-size: 18px;
+    }
+
+    #jesusImage {
+      margin-top: 30px;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+
+    .top-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top-buttons button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #0084dc;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.top-buttons button:hover {
+  background-color: #005fa3;
+}
+  </style>
+</head>
+<body>
+
+  <div class="top-buttons">
+   <button onclick="window.location.href='../index.html'">Go to Kazuma Yamaguchi's resume</button>
+   <button onclick="window.location.href='photographybasics.html'">Go to Photography Basics</button>
+  </div>
+
+  <h1>Guess the Missing Word</h1>
+  <div id="verse">Loading verse...</div>
+
+  <input type="text" id="guessInput" placeholder="Enter the missing word">
+  <br>
+  <button onclick="checkGuess()">Submit</button>
+  <button onclick="showHint()">Hint</button>
+
+  <div id="result"></div>
+  <div id="hint"></div>
+
+  <img id="jesusImage" src="../Images/jesus.avif" alt="Jesus">
+
+  <script>
+    const verses = [
+      {
+        full: "I can do all things through Christ which strengtheneth me.",
+        missingWord: "Christ",
+        hint: "He is the anointed one, central to the New Testament."
+      },
+      {
+        full: "For God so loved the world, that he gave his only begotten Son.",
+        missingWord: "Son",
+        hint: "He is both the child and heir, sent from the Father."
+      },
+      {
+        full: "The Lord is my shepherd; I shall not want.",
+        missingWord: "shepherd",
+        hint: "One who guides the flock and protects from wolves."
+      },
+      {
+        full: "Trust in the Lord with all thine heart; and lean not unto thine own understanding.",
+        missingWord: "understanding",
+        hint: "More than knowledge — this helps you make sense of things."
+      },
+      {
+        full: "In the beginning God created the heaven and the earth.",
+        missingWord: "created",
+        hint: "God did this when He made everything from nothing."
+      },
+      {
+        full: "Jesus wept.",
+        missingWord: "wept",
+        hint: "A word for shedding tears."
+      },
+      {
+        full: "The fear of the Lord is the beginning of wisdom.",
+        missingWord: "wisdom",
+        hint: "More than smarts — it helps you live rightly."
+      },
+      {
+        full: "Blessed are the meek: for they shall inherit the earth.",
+        missingWord: "meek",
+        hint: "They are gentle, not proud, and strong in humility."
+      },
+      {
+        full: "Love your enemies, bless them that curse you.",
+        missingWord: "enemies",
+        hint: "The opposite of friends — yet we’re called to love them."
+      },
+      {
+        full: "Be still, and know that I am God.",
+        missingWord: "still",
+        hint: "To cease striving or moving — a peaceful state."
+      },
+      {
+        full: "Let everything that hath breath praise the Lord.",
+        missingWord: "praise",
+        hint: "A joyful declaration, often sung, of God’s greatness."
+      },
+      {
+        full: "Man shall not live by bread alone, but by every word of God.",
+        missingWord: "bread",
+        hint: "A symbol of physical nourishment, but not enough for the soul."
+      },
+      {
+        full: "I am the way, the truth, and the life.",
+        missingWord: "truth",
+        hint: "The opposite of a lie."
+      },
+      {
+        full: "Rejoice in the Lord always: and again I say, Rejoice.",
+        missingWord: "Rejoice",
+        hint: "To express great joy again and again."
+      },
+      {
+        full: "My grace is sufficient for thee.",
+        missingWord: "grace",
+        hint: "God’s undeserved kindness and favor."
+      }
+    ];
+
+    let currentVerse = {};
+    let history = [];
+
+    const verseDiv = document.getElementById("verse");
+    const resultDiv = document.getElementById("result");
+    const hintDiv = document.getElementById("hint");
+
+    function chooseVerse() {
+      let index;
+      do {
+        index = Math.floor(Math.random() * verses.length);
+      } while (history.includes(index));
+
+      history.push(index);
+      if (history.length > 3) history.shift();
+
+      currentVerse = verses[index];
+      const hidden = currentVerse.full.replace(
+        new RegExp(`\\b${currentVerse.missingWord}\\b`, 'i'),
+        "_____"
+      );
+
+      verseDiv.textContent = hidden;
+      resultDiv.textContent = "";
+      hintDiv.textContent = "";
+      document.getElementById("guessInput").value = "";
+    }
+
+    function checkGuess() {
+      const guess = document.getElementById("guessInput").value.trim();
+      if (guess.toLowerCase() === currentVerse.missingWord.toLowerCase()) {
+        resultDiv.textContent = "✅ Correct!";
+      } else {
+        resultDiv.textContent = `❌ Incorrect. The correct word was: ${currentVerse.missingWord}`;
+      }
+      setTimeout(chooseVerse, 3000);
+    }
+
+    function showHint() {
+      hintDiv.textContent = "Hint: " + currentVerse.hint;
+    }
+
+    chooseVerse();
+  </script>
+
+</body>
+</html>

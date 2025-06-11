@@ -1,0 +1,185 @@
+body {
+    background-color: #f4eceb;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.nav-links {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: eaeaea;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    max-width: 1400px;
+    background-color: #ffffff;
+}
+
+.nav-links a {
+    color: #0084dc;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: 500;
+    transition: font-weight 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+.common-rightmenu {
+    top: 0;
+    right: 0;
+    padding: 12px 20px;
+    background-color: #0068ae;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    text-align: right;
+    width: auto;
+}
+
+.common-rightmenu a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: 500;
+    transition: font-weight 0.2s ease;
+}
+
+.common-rightmenu a:hover {
+    color: #ebebeb;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* Even space between image and title */
+    gap: 10px;
+    background-color: #0084dc;
+    border-bottom: rgb(255, 255, 255) 2px solid; 
+    border-top:rgb(255, 255, 255) 2px solid; 
+}
+
+.title-container h1 {
+    margin: 0; /* "5" was invalid, use "0" or "5px" instead */
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: lighter;
+    border-bottom: 2px solid #ffffff; 
+    padding-bottom: 3px;
+}
+
+.title-container img {
+    height: 450px;
+    width: auto;
+    border-radius: 400px;
+    border: #ffffff 2px solid; 
+    margin: 10px;
+}
+.title-container img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* or center */
+}
+
+.subtitle {
+    font-size: 30px;
+    color: #ffffff;
+    margin: 5px 0 0 0; /* Top margin to space below h1 */
+}
+
+.bar {
+    height: 5px;
+    background-color: #ebe3e2;
+    max-width: 1600px;
+    margin: 50px auto 50px auto;
+    border-radius: 10px;
+}
+
+.divider {
+    color: #ffffff; /* or any color you want */
+    margin: 0 5px;  /* optional: adds spacing around the pipe */
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;           /* Allow wrapping on smaller screens */
+    gap: 10vw;                  /* Responsive spacing using viewport width */
+    margin: 2vh auto;          /* Responsive top and bottom spacing */
+    max-width: 1400px;
+    border: #038ce7 2px solid; 
+}
+.social-icon {
+    width: clamp(120px, 5vw, 60px);  /* Grows between 30px and 60px based on screen size */
+    height: auto;
+    transition: transform 0.2s ease;
+}
+.social-icon:hover {
+    transform: scale(1.1);         /* Slight zoom on hover */
+    filter: brightness(1.2);       /*Brighten the icon on hover */
+    border: #ffffff 2px solid; 
+    border-radius: 30px;
+}
+
+.mainbody {
+    max-width: 1400px;
+    margin: 0 auto;               /* Center the main body */
+    background-color: #038ce7;    /* White background for the main content */ 
+    text-align: center;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 2px solid #ffffff; /* Optional: add a border around the main body */
+}
+
+.mainbody h2 {
+    margin-bottom: 35px; /* reduce space under the heading */
+    padding-bottom: 25px;
+}
+
+.mainbody li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 40px; /* optional: increase readability */
+    color: #ffffff;     /* optional: control text color */
+    font-weight: lighter;
+    margin-top: 25px;
+}
+
+h2 {
+    font-size: 55px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+    border-bottom: 2px solid #ffffff;
+    font-weight: lighter;
+    margin-top: 0cm;
+}
+
+.gobackbutton {
+    display: block;
+    padding: 10px 20px;
+    background-color: #0084dc;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    max-width: 150px;
+    width: fit-content;
+    margin: 0px auto; 
+}
+.gobackbutton a {
+    color: #ffffff; 
+    text-decoration: none;
+}
+.gobackbutton a:hover {
+    color: #ebebeb;
+}

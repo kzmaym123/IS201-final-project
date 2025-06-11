@@ -1,0 +1,225 @@
+body {
+    background-color: #f4eceb;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.nav-links {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: eaeaea;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    max-width: 1400px;
+    background-color: #ffffff;
+}
+
+.nav-links a {
+    color: #0084dc;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: 500;
+    transition: font-weight 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+.common-rightmenu {
+    top: 0;
+    right: 0;
+    padding: 12px 20px;
+    background-color: #0068ae;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    text-align: right;
+    width: auto;
+}
+
+.common-rightmenu a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: 500;
+    transition: font-weight 0.2s ease;
+}
+
+.common-rightmenu a:hover {
+    color: #ebebeb;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* Even space between image and title */
+    gap: 10px;
+    background-color: #0084dc;
+    border-bottom: rgb(255, 255, 255) 2px solid; 
+    border-top:rgb(255, 255, 255) 2px solid; 
+    padding: 30px;
+}
+
+.title-container h1 {
+    margin: 0; /* "5" was invalid, use "0" or "5px" instead */
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: lighter;
+    border-bottom: 2px solid #ffffff; 
+    padding-bottom: 3px;
+    font-family: Arial, sans-serif;
+}
+
+.title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.subtitle {
+    font-size: 30px;
+    color: #ffffff;
+    margin: 5px 0 0 0; /* Top margin to space below h1 */
+    margin-top: 10px;
+}
+
+.bar {
+    height: 5px;
+    background-color: #ebe3e2;
+    max-width: 1600px;
+    margin: 50px auto 50px auto;
+    border-radius: 10px;
+}
+
+.divider {
+    color: #ffffff; /* or any color you want */
+    margin: 0 5px;  /* optional: adds spacing around the pipe */
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;           /* Allow wrapping on smaller screens */
+    gap: 10vw;                  /* Responsive spacing using viewport width */
+    margin: 2vh auto;          /* Responsive top and bottom spacing */
+    max-width: 1400px;
+}
+.exampleimages {
+    width: clamp(300px, 5vw, 350px);  /* Grows between 30px and 60px based on screen size */
+    height: auto;
+    transition: transform 0.2s ease;
+    border: #ffffff 5px solid; 
+}
+.exampleimages:hover {
+    transform: scale(1.2);         /* Slight zoom on hover */
+    transform-origin: center;
+}
+
+.mainbody {
+    max-width: 1400px;
+    margin: 0 auto;               /* Center the main body */
+    background-color: #038ce7;    /* White background for the main content */ 
+    text-align: center;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 2px solid #ffffff; /* Optional: add a border around the main body */
+}
+
+.mainbody h2 {
+    margin-bottom: 35px; /* reduce space under the heading */
+    padding-bottom: 25px;
+}
+
+.mainbody li {
+    /* margin-top: 5px;
+    margin-bottom: 5px; */
+    font-size: 30px; /* optional: increase readability */
+    color: #ffffff;     /* optional: control text color */
+    font-weight: lighter;
+    margin-top: 10px;
+    text-align: left;
+    max-width: 800px;         /* limits line width */
+    margin-left: auto;        /* centers the content */
+    margin-right: auto;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+.mainbody p {
+    font-size: 30px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+.mainbody a {
+    color: #ffffff;
+    background-color: #0068ae;
+    padding: 15px;
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+.mainbody a:hover {
+    color: #ebebeb;
+}
+
+iframe {
+    border: white 2px solid;
+}
+
+h2 {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    border-bottom: 2px solid #ffffff;
+    font-weight: lighter;
+    margin-top: 0cm;
+    font-family: Arial, sans-serif;
+}
+
+.gobackbutton {
+    display: block;
+    padding: 10px 20px;
+    background-color: #0084dc;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    max-width: 150px;
+    width: fit-content;
+    margin: 0px auto; 
+}
+.gobackbutton a {
+    color: #ffffff; 
+    text-decoration: none;
+}
+.gobackbutton a:hover {
+    color: #ebebeb;
+}
+
+ol {
+    list-style-position: inside;
+}
+ol li {
+    text-align: left;
+    padding: none;
+}
+
+.tableauPlaceholder {
+    max-width: 1300px;
+    margin: auto;
+}
+.fortableau {
+    font-family: Arial, sans-serif;
+}
+.fortableau h2 {
+    color: #000000;
+    text-decoration: none;
+    border-bottom: none;
+    padding: 50px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Twitter</title>
+  <style>
+    body {
+      background-color: #e8f5fd;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .message {
+      font-size: 2em;
+      color: #1da1f2;
+      animation: zoom 1s ease-in-out;
+    }
+
+    .syke {
+      margin-top: 30px;
+      font-size: 3em;
+      font-weight: bold;
+      color: red;
+      animation: shake 0.5s infinite alternate;
+    }
+
+    img {
+      margin-top: 30px;
+      width: 200px;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(5deg); }
+    }
+
+    @keyframes zoom {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message">Loading Twitter profile...</div>
+
+  <img src="https://media.tenor.com/-LQxd6QbaOQAAAAC/trollface.gif" alt="Troll Face">
+
+  <div class="syke">SYKE! I don't even have a Twitter account. 😎</div>
+
+  <p style="margin-top: 20px; color: #333;">
+    But hey, now that you're here... wanna follow me nowhere? 😂
+  </p>
+
+</body>
+</html>
